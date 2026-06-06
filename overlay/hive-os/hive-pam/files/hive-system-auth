@@ -1,0 +1,17 @@
+# HIVE OS PAM CONFIG - 2026 ARCHITECT BUILD
+# Prime Directive Enforced
+
+auth     required   pam_nologin.so
+auth     include    hive-system-auth
+auth     sufficient pam_hive.so
+auth     required   pam_unix.so try_first_pass
+
+account  required   pam_hive.so
+account  required   pam_unix.so
+
+password required   pam_unix.so try_first_pass sha512 shadow
+
+session  optional   pam_hive.so
+session  required   pam_limits.so
+session  required   pam_env.so
+session  required   pam_unix.so
