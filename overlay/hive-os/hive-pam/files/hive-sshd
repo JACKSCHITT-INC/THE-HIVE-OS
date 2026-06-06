@@ -1,0 +1,11 @@
+# HIVE OS SSHD PAM CONFIG - 2026 ARCHITECT BUILD
+
+auth     required   pam_nologin.so
+auth     sufficient pam_hive.so
+auth     required   pam_unix.so try_first_pass
+
+account  required   pam_hive.so
+account  required   pam_unix.so
+
+session  optional   pam_hive.so
+session  required   pam_unix.so
