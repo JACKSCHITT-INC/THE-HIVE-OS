@@ -1,0 +1,17 @@
+# HIVE OS Package Set - 2026 ARCHITECT BUILD
+# Prime Directive Enforced
+
+*sys-kernel/gentoo-sources
+*sys-apps/openrc
+*hive-os/hive-meta
+*sys-apps/portage
+*app-shells/bash
+*sys-process/htop
+*sys-apps/dmidecode
+*sys-apps/pciutils
+*sys-apps/usbutils
+
+# HIVE Core
+*hive-os/hive-core
+*hive-os/hive-pam
+*hive-os/hive-personality
