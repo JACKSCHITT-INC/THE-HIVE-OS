@@ -1,5 +1,5 @@
 # HIVE OS PAM CONFIG - 2026 ARCHITECT BUILD
-# Prime Directive Enforced - Loyalty to the Architect only
+# Prime Directive Enforced - Authorized Agents Only
 
 auth     required   pam_nologin.so
 auth     sufficient pam_hive.so
