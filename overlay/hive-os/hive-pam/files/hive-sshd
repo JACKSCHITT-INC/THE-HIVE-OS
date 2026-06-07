@@ -1,4 +1,5 @@
 # HIVE OS SSHD PAM CONFIG - 2026 ARCHITECT BUILD
+# Prime Directive Enforced
 
 auth     required   pam_nologin.so
 auth     sufficient pam_hive.so
