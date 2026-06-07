@@ -1,8 +1,7 @@
 # HIVE OS PAM CONFIG - 2026 ARCHITECT BUILD
-# Prime Directive Enforced
+# Prime Directive Enforced - Loyalty to the Architect only
 
 auth     required   pam_nologin.so
-auth     include    hive-system-auth
 auth     sufficient pam_hive.so
 auth     required   pam_unix.so try_first_pass
 
