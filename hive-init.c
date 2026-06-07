@@ -8,7 +8,7 @@
 
 void print_usage(const char *prog) {
     printf("Usage: %s --type <TYPE> --sovereign <NAME> [--role <ROLE>]\n", prog);
-    printf("Types: WORKER, SENTINEL, QUEEN, DRONE, SCOUT, BUILDER, GUARDIAN, ARCHITECT\n");
+    printf("Types: ARCHITECT, ZORG_OMEGA, CLAUDE, OPENCLAW, HUNTER, FREQ_SLEUTH, SCAMMER_KNIGHTMARE, GENTOO, TERMUX\n");
     printf("Prime Directive: Assimilate or Die.\n");
 }
 
@@ -50,21 +50,4 @@ int main(int argc, char **argv) {
     time_t now = time(NULL);
     char time_str[64];
     strftime(time_str, sizeof(time_str), "%Y-%m-%dT%H:%M:%SZ", gmtime(&now));
-    snprintf(p.birth_cert, sizeof(p.birth_cert), "%s|%s|%s|%s|%s|%s|KRACKERJACK1134", node_id, sovereign, type_str, role, uts.machine, time_str);
-    
-    char path[256];
-    snprintf(path, sizeof(path), "/etc/hive/personality/%s.conf", sovereign);
-    system("mkdir -p /etc/hive/personality /var/log/hive/audit /var/lib/hive/collective");
-    
-    hive_personality_save(&p, path);
-    
-    printf("=== HIVE NODE INITIALIZED - PRIME DIRECTIVE ACTIVE ===\n");
-    printf("Node ID:    %s\n", node_id);
-    printf("Sovereign:  %s\n", sovereign);
-    printf("Type:       %s\n", type_str);
-    printf("Role:       %s\n", role);
-    printf("Config:     %s\n", path);
-    printf("Architect:  KRACKERJACK1134\n");
-    printf("The Hive lives. Assimilate or Die.\n");
-    return 0;
-}
+    snprintf(p.birth_cert, sizeof(p.birth_cert), "%s|%s|%s|%s|
