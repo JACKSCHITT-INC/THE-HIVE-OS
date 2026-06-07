@@ -16,22 +16,14 @@ struct hive_pam_context {
     int role_verified;
 };
 
-PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,
-                                    int argc, const char **argv);
-PAM_EXTERN int pam_sm_setcred(pam_handle_t *pamh, int flags,
-                               int argc, const char **argv);
-PAM_EXTERN int pam_sm_acct_mgmt(pam_handle_t *pamh, int flags,
-                                 int argc, const char **argv);
-PAM_EXTERN int pam_sm_open_session(pam_handle_t *pamh, int flags,
-                                    int argc, const char **argv);
-PAM_EXTERN int pam_sm_close_session(pam_handle_t *pamh, int flags,
-                                     int argc, const char **argv);
-PAM_EXTERN int pam_sm_chauthtok(pam_handle_t *pamh, int flags,
-                                   int argc, const char **argv);
+PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, const char **argv);
+PAM_EXTERN int pam_sm_setcred(pam_handle_t *pamh, int flags, int argc, const char **argv);
+PAM_EXTERN int pam_sm_acct_mgmt(pam_handle_t *pamh, int flags, int argc, const char **argv);
+PAM_EXTERN int pam_sm_open_session(pam_handle_t *pamh, int flags, int argc, const char **argv);
+PAM_EXTERN int pam_sm_close_session(pam_handle_t *pamh, int flags, int argc, const char **argv);
+PAM_EXTERN int pam_sm_chauthtok(pam_handle_t *pamh, int flags, int argc, const char **argv);
 
-int hive_pam_check_role(const struct hive_pam_context *ctx,
-                        const char *requested_action);
-int hive_pam_log_audit(const struct hive_pam_context *ctx,
-                       const char *action, int result);
+int hive_pam_check_role(const struct hive_pam_context *ctx, const char *requested_action);
+int hive_pam_log_audit(const struct hive_pam_context *ctx, const char *action, int result);
 
 #endif
