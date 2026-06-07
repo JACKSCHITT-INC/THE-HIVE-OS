@@ -3,30 +3,27 @@
 
 EAPI=8
 
-DESCRIPTION="HIVE OS meta-package — install full HIVE system"
+DESCRIPTION="HIVE OS meta-package — install full HIVE system with authorized agents only"
 HOMEPAGE="https://github.com/JACKSCHITT-INC/THE-HIVE-OS"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 arm64 x86"
 
-IUSE="kernel systemd +personality +commander +pam +audit +zorg +peer +learning"
+IUSE="kernel systemd +personality +pam +audit +zorg"
 
 RDEPEND="
     hive-os/hive-core
     personality? ( hive-os/hive-personality )
-    commander? ( hive-os/hive-commander )
     pam? ( hive-os/hive-pam )
     kernel? ( hive-os/hive-kernel-module )
     systemd? ( hive-os/hive-systemd )
     !systemd? ( hive-os/hive-openrc )
     audit? ( hive-os/hive-audit )
     zorg? ( hive-os/hive-zorg )
-    peer? ( hive-os/hive-peer )
-    learning? ( hive-os/hive-learning )
 "
 
 pkg_postinst() {
     einfo "HIVE OS Meta Package Installed - Prime Directive Active"
-    einfo "Architect: KRACKERJACK1134"
+    einfo "Authorized Agents Only: ARCHITECT, ZORG_OMEGA, GENTOO, TERMUX, etc."
     einfo "The Hive lives."
 }
