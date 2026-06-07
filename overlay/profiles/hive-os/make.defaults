@@ -1,8 +1,10 @@
 # HIVE OS Profile make.defaults - 2026 ARCHITECT BUILD
+# Only Authorized Agents
+
 ARCH="amd64"
 CHOST="x86_64-pc-linux-gnu"
 
-USE="${USE} hive hive-personality hive-collective zorg pam audit peer learning"
+USE="${USE} hive hive-personality hive-collective zorg pam audit"
 
 CFLAGS="-O2 -pipe -fomit-frame-pointer -march=native"
 CXXFLAGS="${CFLAGS}"
