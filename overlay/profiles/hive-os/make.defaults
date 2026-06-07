@@ -8,7 +8,7 @@ CFLAGS="-O2 -pipe -fomit-frame-pointer -march=native"
 CXXFLAGS="${CFLAGS}"
 
 HIVE_FEATURES="personality collective audit update sovereign"
-HIVE_DEFAULT_TYPE="WORKER"
+HIVE_DEFAULT_TYPE="GENTOO"
 HIVE_COLLECTIVE_URL="https://collective.hive-os.org/v1"
 
 MAKEOPTS="-j$(nproc)"
