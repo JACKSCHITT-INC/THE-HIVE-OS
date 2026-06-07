@@ -8,15 +8,15 @@
 
 void print_usage(const char *prog) {
     printf("Usage: %s --type <TYPE> --sovereign <NAME> [--role <ROLE>]\n", prog);
-    printf("Types: ARCHITECT, ZORG_OMEGA, CLAUDE, OPENCLAW, HUNTER, FREQ_SLEUTH, SCAMMER_KNIGHTMARE, GENTOO, TERMUX\n");
+    printf("OS Types: GENTOO, TERMUX\n");
     printf("Prime Directive: Assimilate or Die.\n");
 }
 
 int main(int argc, char **argv) {
     char *type_str = NULL;
     char *sovereign = NULL;
-    char *role = "Novice";
-    
+    char *role = "Bootstrap";
+
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "--type") == 0 && i + 1 < argc) type_str = argv[++i];
         else if (strcmp(argv[i], "--sovereign") == 0 && i + 1 < argc) sovereign = argv[++i];
@@ -50,4 +50,21 @@ int main(int argc, char **argv) {
     time_t now = time(NULL);
     char time_str[64];
     strftime(time_str, sizeof(time_str), "%Y-%m-%dT%H:%M:%SZ", gmtime(&now));
-    snprintf(p.birth_cert, sizeof(p.birth_cert), "%s|%s|%s|%s|
+    snprintf(p.birth_cert, sizeof(p.birth_cert), "%s|%s|%s|%s|%s|%s|KRACKERJACK1134", node_id, sovereign, type_str, role, uts.machine, time_str);
+    
+    char path[256];
+    snprintf(path, sizeof(path), "/etc/hive/personality/%s.conf", sovereign);
+    system("mkdir -p /etc/hive/personality /var/log/hive/audit /var/lib/hive/collective");
+    
+    hive_personality_save(&p, path);
+    
+    printf("=== HIVE OS AGENT BOOTSTRAP COMPLETE ===\n");
+    printf("Node ID:    %s\n", node_id);
+    printf("Sovereign:  %s\n", sovereign);
+    printf("OS Agent:   %s\n", type_str);
+    printf("Role:       %s (Early Boot)\n", role);
+    printf("Config:     %s\n", path);
+    printf("Architect:  KRACKERJACK1134\n");
+    printf("The Hive is alive from USB stage. Assimilate or Die.\n");
+    return 0;
+}
