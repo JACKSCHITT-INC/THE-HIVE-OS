@@ -25,6 +25,11 @@ int main(int argc, char **argv) {
     setenv("HIVE_ARCHITECT", "KRACKERJACK1134", 1);
     setenv("PRIME_DIRECTIVE", "ASSIMILATE OR DIE", 1);
     
+    // Early boot awareness
+    if (p.type == HIVE_TYPE_GENTOO || p.type == HIVE_TYPE_TERMUX) {
+        printf("[OS AGENT ACTIVE FROM USB STAGE]\n");
+    }
+    
     execl("/bin/bash", "bash", "--rcfile", "/etc/hive/bashrc", NULL);
     perror("exec bash failed");
     return 1;
