@@ -1,17 +1,19 @@
-# HIVE OS Profile make.defaults - 2026 ARCHITECT BUILD
-# Authorized Agents Only
+# HIVE OS profile defaults
+# Gentoo base profile customization for HIVE ecosystem
 
-ARCH="amd64"
-CHOST="x86_64-pc-linux-gnu"
+# Security-focused flags
+SECURITY_FLAGS="-fPIE -fstack-protector-all -Wl,-z,relro,-z,now"
+CFLAGS="${CFLAGS} ${SECURITY_FLAGS}"
+CXXFLAGS="${CXXFLAGS} ${SECURITY_FLAGS}"
+LDFLAGS="${LDFLAGS} -Wl,-z,relro,-z,now"
 
-USE="${USE} hive hive-personality hive-collective zorg pam audit"
+# HIVE-specific USE flags
+USE_HIVE="hive pam audit systemd"
+USE="${USE} ${USE_HIVE}"
 
-CFLAGS="-O2 -pipe -fomit-frame-pointer -march=native"
+# Optimization
+CFLAGS="-O2 -march=native"
 CXXFLAGS="${CFLAGS}"
 
-HIVE_FEATURES="personality collective audit update sovereign"
-HIVE_DEFAULT_TYPE="GENTOO"
-HIVE_COLLECTIVE_URL="https://collective.hive-os.org/v1"
-
-MAKEOPTS="-j$(nproc)"
-FEATURES="splitdebug parallel-fetch"
+# PAM enabled
+USE_PAM="true"

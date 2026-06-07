@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+# HIVE Personality Daemon for OpenRC
+
+command="/usr/libexec/hive/personality-daemon.py"
+command_args="300"
+command_background=true
+start_stop_daemon_args="--user hive --group hive"
+
+# Dependency ordering
+depend() {
+    need net
+    use hive-audit
+    before hive-collective-sync
+}
+
+# Standard OpenRC hooks
+start_pre() {
+    mkdir -p /var/log/hive /var/lib/hive
+    chown hive:hive /var/log/hive /var/lib/hive
+    chmod 750 /var/log/hive /var/lib/hive
+}
+
+stop_post() {
+    # Save state on shutdown
+    /usr/libexec/hive/personality-daemon.py --save-state 2>/dev/null || true
+}

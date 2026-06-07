@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+# HIVE Collective Synchronization for OpenRC (cron-triggered)
+
+command="/usr/libexec/hive/collective-sync.py"
+command_args="--daemon"
+command_background=false
+
+# Dependency ordering
+depend() {
+    need net
+    use hive-personality
+}
+
+start_post() {
+    # Install cron job for periodic sync (every 5 minutes)
+    cat > /etc/cron.d/hive-collective-sync << 'EOF'
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*/5 * * * * hive /usr/libexec/hive/collective-sync.py > /var/log/hive/collective-sync.log 2>&1
+EOF
+    chmod 600 /etc/cron.d/hive-collective-sync
+}

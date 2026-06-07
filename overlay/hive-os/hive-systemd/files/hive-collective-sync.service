@@ -1,0 +1,19 @@
+[Unit]
+Description=HIVE Collective Synchronization Service
+Documentation=man:hive-sync(8)
+After=network-online.target hive-personality.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/hive/collective-sync.py
+User=hive
+Group=hive
+
+# Read-only access to configs
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/hive/collective
+
+[Install]
+WantedBy=multi-user.target

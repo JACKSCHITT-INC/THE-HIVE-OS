@@ -1,0 +1,12 @@
+[Unit]
+Description=HIVE Collective Synchronization Timer - Periodic agent sync
+Requires=hive-collective-sync.service
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=5min
+Persistent=true
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target

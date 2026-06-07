@@ -1,16 +1,22 @@
-# HIVE OS PAM CONFIG - 2026 ARCHITECT BUILD
-# Prime Directive Enforced - Authorized Agents Only
+# HIVE PAM system-auth configuration
+# Integrated authentication with personality-aware security
+# Author: KRACKERJACK1134 - The Architect
 
-auth     required   pam_nologin.so
-auth     sufficient pam_hive.so
-auth     required   pam_unix.so try_first_pass
+auth [success=ok default=bad] pam_unix.so nullok try_first_pass
+auth [success=ok default=bad] pam_hive.so
+auth requisite pam_deny.so
+auth required pam_permit.so
 
-account  required   pam_hive.so
-account  required   pam_unix.so
+account required pam_unix.so
+account required pam_hive.so
+account required pam_permit.so
 
-password required   pam_unix.so try_first_pass sha512 shadow
+password [success=ok default=unstable] pam_unix.so obscure sha512 rounds=5000
+password required pam_hive.so
+password required pam_permit.so
 
-session  optional   pam_hive.so
-session  required   pam_limits.so
-session  required   pam_env.so
-session  required   pam_unix.so
+session optional pam_systemd.so
+session required pam_limits.so
+session required pam_unix.so
+session required pam_hive.so
+session optional pam_permit.so

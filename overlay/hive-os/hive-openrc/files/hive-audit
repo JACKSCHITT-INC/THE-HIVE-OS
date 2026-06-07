@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+# HIVE Audit Service for OpenRC
+
+command="/usr/sbin/hive-audit-daemon"
+command_background=true
+start_stop_daemon_args="--user hive --group hive"
+
+require_cgroups="memory"
+
+# Dependency ordering
+depend() {
+    need localmount
+    before hive-personality
+}
+
+# Hooks
+start_pre() {
+    mkdir -p /var/log/hive/audit /var/lib/hive/collective
+    chown hive:hive /var/log/hive/audit /var/lib/hive/collective
+    chmod 750 /var/log/hive/audit /var/lib/hive/collective
+}

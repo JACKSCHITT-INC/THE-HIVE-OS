@@ -1,0 +1,12 @@
+[Unit]
+Description=HIVE Personality sync timer
+Documentation=man:hive-personality(8)
+Requires=hive-personality.service
+
+[Timer]
+OnBootSec=30sec
+OnUnitActiveSec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

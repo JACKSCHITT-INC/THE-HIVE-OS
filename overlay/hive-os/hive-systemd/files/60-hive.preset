@@ -1,0 +1,8 @@
+# HIVE systemd preset configuration
+# Automatically enable HIVE services on installation
+
+enable hive-personality.service
+enable hive-personality.timer
+enable hive-audit.service
+enable hive-collective-sync.service
+enable hive-collective-sync.timer

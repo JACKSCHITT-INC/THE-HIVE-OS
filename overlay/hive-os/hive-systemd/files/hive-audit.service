@@ -1,0 +1,28 @@
+[Unit]
+Description=HIVE Audit Logging Service - Collective intelligence tracking
+Documentation=man:hive-audit(8)
+After=network.target
+Before=hive-personality.service
+
+[Service]
+Type=notify
+ExecStartPre=/usr/bin/mkdir -p /var/log/hive/audit /var/lib/hive/collective
+ExecStart=/usr/sbin/hive-audit-daemon
+Restart=on-failure
+RestartSec=5
+User=hive
+Group=hive
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/log/hive /var/lib/hive
+
+# Capabilities for audit logging
+AmbientCapabilities=CAP_AUDIT_WRITE
+Capabilities=cap_audit_write=ep
+
+[Install]
+WantedBy=multi-user.target

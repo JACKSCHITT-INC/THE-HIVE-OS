@@ -1,0 +1,22 @@
+# HIVE service configuration for OpenRC
+# Source this file from hive service scripts
+
+# Personality daemon
+HIVE_PERSONALITY_PIDFILE="/run/hive-personality.pid"
+HIVE_PERSONALITY_LOGFILE="/var/log/hive/personality.log"
+HIVE_PERSONALITY_USER="hive"
+HIVE_PERSONALITY_GROUP="hive"
+
+# Audit service
+HIVE_AUDIT_PIDFILE="/run/hive-audit.pid"
+HIVE_AUDIT_LOGFILE="/var/log/hive/audit/daemon.log"
+HIVE_AUDIT_USER="hive"
+HIVE_AUDIT_GROUP="hive"
+
+# Collective sync interval (seconds)
+HIVE_COLLECTIVE_SYNC_INTERVAL="300"
+
+# Enable/disable services
+HIVE_ENABLE_PERSONALITY="yes"
+HIVE_ENABLE_AUDIT="yes"
+HIVE_ENABLE_COLLECTIVE_SYNC="yes"

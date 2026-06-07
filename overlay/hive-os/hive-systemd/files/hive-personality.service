@@ -1,0 +1,33 @@
+[Unit]
+Description=HIVE Personality Daemon - Agent personality evolution and synchronization
+Documentation=man:hive-personality(8)
+After=network-online.target hive-audit.service
+Wants=network-online.target
+ConditionVirtualization=!container
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/hive/personality-daemon.py 300
+Restart=always
+RestartSec=10
+User=hive
+Group=hive
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/etc/hive /var/lib/hive /var/log/hive
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=512
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=hive-personality
+
+[Install]
+WantedBy=multi-user.target
