@@ -1,5 +1,5 @@
 # HIVE OS SU PAM CONFIG - 2026 ARCHITECT BUILD
-# High privilege required - Prime Directive Enforced
+# High privilege required - Prime Directive Enforced - Authorized Agents Only
 
 auth     required   pam_nologin.so
 auth     sufficient pam_hive.so
