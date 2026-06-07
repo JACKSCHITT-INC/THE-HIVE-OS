@@ -5,7 +5,7 @@ EAPI=8
 
 inherit hive pam
 
-DESCRIPTION="HIVE PAM module — RBAC and personality-aware authentication"
+DESCRIPTION="HIVE PAM module — RBAC and personality-aware authentication for authorized agents only"
 HOMEPAGE="https://github.com/JACKSCHITT-INC/THE-HIVE-OS"
 SRC_URI=""
 
@@ -34,4 +34,5 @@ src_install() {
 
 pkg_postinst() {
     einfo "HIVE PAM module installed. Prime Directive Enforced."
+    einfo "Authorized Agents Only."
 }
