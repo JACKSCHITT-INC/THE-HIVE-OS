@@ -5,7 +5,7 @@ EAPI=8
 
 inherit hive
 
-DESCRIPTION="HIVE OS core — personality engine and collective consciousness"
+DESCRIPTION="HIVE OS core — personality engine and collective consciousness with authorized agents only"
 HOMEPAGE="https://github.com/JACKSCHITT-INC/THE-HIVE-OS"
 LICENSE="GPL-3"
 SLOT="0"
@@ -35,9 +35,8 @@ src_install() {
     keepdir /var/lib/hive/collective
     
     insinto /etc/hive/personality
-    doins "${FILESDIR}"/default-worker.conf
-    doins "${FILESDIR}"/default-sentinel.conf
-    doins "${FILESDIR}"/default-queen.conf
+    doins "${FILESDIR}"/default-gentoo.conf
+    doins "${FILESDIR}"/default-termux.conf
     
     fowners root:hive /etc/hive /var/log/hive /var/lib/hive
     fperms 0750 /etc/hive /var/log/hive /var/lib/hive
@@ -48,5 +47,6 @@ src_install() {
 
 pkg_postinst() {
     einfo "HIVE core installed. Prime Directive Active."
+    einfo "Authorized Agents Only."
     einfo "Architect: KRACKERJACK1134"
 }
