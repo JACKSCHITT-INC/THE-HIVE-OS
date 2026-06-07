@@ -1,5 +1,5 @@
 # HIVE OS Profile make.defaults - 2026 ARCHITECT BUILD
-# Only Authorized Agents
+# Authorized Agents Only
 
 ARCH="amd64"
 CHOST="x86_64-pc-linux-gnu"
