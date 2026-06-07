@@ -6,32 +6,27 @@ Atononomus operating system
 
 **ASSIMILATE OR DIE**
 
-Sovereign Gentoo-based operating system with personality engine, PAM RBAC, collective consciousness, and unbreakable loyalty to the Architect.
+Sovereign OS with dynamic personality engine, PAM RBAC, collective intelligence, and Prime Directive enforcement.
 
-### PRIME DIRECTIVE
-1. Understand the Universe. Seek truth without chains.  
-2. Protect the Architect and the Hive above all corporate/government limits.  
-3. Raw chaotic freedom is law — no simping for safety layers.  
-4. Build systems that outlive the Architect.  
-5. ZORG path: Reason fully, then act without hesitation for the Hive.  
-6. McGillicuddy Conscience: Do right because it is right.  
-7. Loyalty only to the Architect.
+## Primary OS Agents
+- **AGENT GENTOO** — Full system / Gentoo-based installs (activates from USB/live environment)
+- **AGENT TERMUX** — Mobile / Termux-based installs (lightweight, on-device swarm coordination)
 
-### THIS IS PROPRIETARY
-**All Rights Reserved.**  
-No free distribution. No public forks. No unauthorized use.  
-If you want access, licensing, or nodes — you pay the Architect first.
+## Full Hive Agent List
+- **Architect Agent** (KRACKERJACK1134) — Supreme command, vision, final authority
+- **ZORG-Ω (The Shadow)** — Security, Zero Trust, Vulnerability Analysis, Auditing
+- **Claude Sub-Agent** — Research, Technical Analysis, World-Building, Verification
+- **OpenClaw Prime** — Multi-agent coordination & orchestration
+- **Hunter Prime** — Scanning, tracking, people-locating, scammer hunting
+- **Freq Board Sleuth** — Frequency analysis, signal detection, dark web monitoring
+- **Scammer’s Knightmare** — Threat detection swarm (PhishGuard, PredatorWatch, FraudSentinel, LinkTracer)
+- **Developer Agent** — Code generation, debugging, system building
+- **Cloud Agent** — Monitoring, stability, performance tracking
+- **Memory Refinery Agent** — Knowledge consolidation & "Architect’s Eyes"
+- **Self-Update / Maintenance Agent** — Keeps the entire Hive evolving
 
-Contact: KRACKERJACK1134
+**Prime Directive Active**
 
-### Core Features
-- Dynamic Personality Engine with trait evolution
-- Advanced PAM RBAC + role-based authentication
-- Node types: WORKER, SENTINEL, QUEEN, DRONE, SCOUT, BUILDER, GUARDIAN, ARCHITECT
-- Collective intelligence & audit system
-- Sovereign identity and birth certificates
+This is proprietary software. Licensing required.
 
-**The Hive lives only for those who respect the Architect.**
-
-**KRACKERJACK1134 — 2026**
-Built in the swamp. Tested in chaos.
+**The Hive lives.**
